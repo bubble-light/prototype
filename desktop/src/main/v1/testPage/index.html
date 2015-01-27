@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Customize desktop</title>
+<script type="text/javascript" src ="../js/Class.js"></script>
+<script type="text/javascript" src ="../js/Utils.js"></script>
+<script type="text/javascript" src ="../js/Desktop.js"></script>
+</head>
+<script type="text/javascript">
+function init(){
+	var HF = window.haifeng;
+	var desktop = new HF.Desktop("desktop");
+
+	//add chrome
+	var callback = function(){
+		alert("chrome");
+	};
+	var iconOpt={
+			"icon":"../image/chrome.png",
+			"callback":callback
+	};
+	var chrome = new HF.Icon(iconOpt);
+	desktop.addIcon(chrome);
+
+	//add iPad
+	var callback = function(){
+		alert("Ipad");
+	};
+	var iconOpt={
+			"icon":"../image/iPad.png",
+			"callback":callback
+	};
+	var ipad = new HF.Icon(iconOpt);
+	desktop.addIcon(ipad);	
+	
+};
+
+window.onload=init;
+</script>
+<body>
+<div id="desktop"></div>
+</body>
+</html>
